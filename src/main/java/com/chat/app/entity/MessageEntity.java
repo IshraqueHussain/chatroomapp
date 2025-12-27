@@ -13,11 +13,15 @@ public class MessageEntity {
     private String content;
     private String time;
 
+    @Column(nullable = false)
+    private String room;
+
     public MessageEntity(){}
 
-    public MessageEntity(String name, String content, String time){
+    public MessageEntity(String name, String content, String room, String time){
        this.name=name;
        this.content=content;
+       this.room=room;
        this.time=time;
     }
 
@@ -41,5 +45,12 @@ public class MessageEntity {
     }
     public void setTime(String time){
         this.time=time;
+    }
+
+    public String getRoom(){
+        return room;
+    }
+    public void setRoom(String room){
+        this.room=room;
     }
 }

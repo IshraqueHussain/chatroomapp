@@ -19,10 +19,12 @@ public class MessageService {
          return null;
         }
         message.setTime(LocalTime.now().toString());
+        String room = message.getRoom().toLowerCase().trim();
 
         MessageEntity entity= new MessageEntity(
                 message.getName(),
                 message.getContent(),
+                room,
                 message.getTime()
         );
         messageRepository.save(entity);
